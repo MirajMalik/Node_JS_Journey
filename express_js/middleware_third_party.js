@@ -15,7 +15,9 @@ const morgan = require('morgan')
 const app = express()
 
 
-//app.use(function(parameters)) is used to use middlewares
+//app.use(function(parameters)) is used to use middlewares .
+
+//app.use() here is applied to all the routes . It is not specific for any route.
 app.use(morgan('dev'));
 
 // if process env gives a port otherwise default value
@@ -27,11 +29,6 @@ const PORT = process.env.PORT || 8080
 
 app.get('/about',(req,res)=>{
     res.send('<h1>I am about page.</h1>') //to send a response into the browser
-
-    // to get the baseUrl from the req object 
-
-    console.log(req.baseUrl)
-
 
 }) 
 
