@@ -7,7 +7,7 @@ exports.getAllContacts = (req,res)=>{
 
 
 exports.createContact = (req,res)=>{
-    // console.log(req.body)
+    console.log(req.body)
     let{name,phone,email} = req.body
     let contact = contacts.createContact({
         name,
@@ -28,4 +28,34 @@ exports.getContactsById = (req,res)=>{
     let contact = contacts.getContactsById(id)
 
     res.json(contact)
+}
+
+exports.updateContactById = (req,res)=>{
+    let id = req.params.id
+    id = parseInt(id)
+
+    let{name,phone,email} = req.body
+
+    let updatedContact = {
+        name,
+        phone,
+        email
+    }
+
+
+
+    let contact = contacts.updateContactById(id,updatedContact)
+
+    res.json(contact)
+
+}
+
+exports.deleteContactById = (req,res)=>{
+    let id = req.params.id
+    id = parseInt(id)
+
+    let contact = contacts.deleteContactById(id)
+
+    res.json(contact)
+
 }

@@ -4,7 +4,9 @@ const router = require('express').Router()
 const {
     getAllContacts,
     createContact,
-    getContactsById
+    getContactsById,
+    updateContactById,
+    deleteContactById
 } = require('./contactController')
 
 router.get('/',getAllContacts)
@@ -12,8 +14,8 @@ router.get('/',getAllContacts)
 router.post('/',createContact)
 
 router.get('/:id',getContactsById)
-// router.put('/:id')
-// router.delete('/:id')
+router.put('/:id',updateContactById)
+router.delete('/:id',deleteContactById)
 
 module.exports = router
 
