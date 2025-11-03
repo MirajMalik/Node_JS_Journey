@@ -41,4 +41,4 @@ deleteContactById(id){
 }
 
 
-module.exports  = new Contacts()
+export default new Contacts()

@@ -8,7 +8,7 @@ const {
 
 router.get('/',getAllContacts)
 
-// router.post('/',createContact)
+router.post('/',createContact)
 
 // router.get('/:id')
 // router.put('/:id')

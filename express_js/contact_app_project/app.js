@@ -6,10 +6,13 @@ const contactRoutes = require('./contactRoutes')
 
 app.use(morgan('dev'))
 
+app.use(express.urlencoded({extended:true}))  // It is for taking form data . it is a middleware.
+app.use(express.json())  // To accept json data
+
+
+
 app.use('/contacts',contactRoutes)
 
-app.use(express.urlencoded({extended:true}))  // It is for taking form data
-app.use(express.json())  // To accept json data
 
 app.use((req,res)=>{
     res.status(404).send('404 Page Not Found');
