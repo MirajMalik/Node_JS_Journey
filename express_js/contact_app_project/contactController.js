@@ -20,3 +20,12 @@ exports.createContact = (req,res)=>{
 
 }
 
+
+exports.getContactsById = (req,res)=>{
+    let id = req.params.id
+    id = parseInt(id)
+    
+    let contact = contacts.getContactsById(id)
+
+    res.json(contact)
+}
