@@ -15,8 +15,9 @@ const morgan = require('morgan')
 const app = express()
 
 
-//app.use(function(parameters)) is used to use middlewares
-//app.use(morgan('dev'));
+
+
+
 
 // if process env gives a port otherwise default value
 const PORT = process.env.PORT || 8080 
