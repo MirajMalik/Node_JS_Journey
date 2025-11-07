@@ -4,5 +4,19 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
+// home route
+app.get('/',(req,res)=>{
+    res.sendFile(__dirname + "/index.html")
+})
+
+// handaling invalid routes
+app.use((req,res)=>{
+    res.send('<h3>404 Page Not Found </h3>')
+
+})
+app.use(cors())
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.json())
+
 module.exports = app
 
